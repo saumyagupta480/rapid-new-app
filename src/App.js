@@ -13,11 +13,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Router>
+        <Router basename='/rapid-news-app'>
         <Navbar/>
 
         <Routes>
-          <Route path="/" element={<News category='latest' />} />
+          <Route exact path="/rapid-news-app" element={<News category='latest' />} />
         </Routes>
         </Router>
       </div>
