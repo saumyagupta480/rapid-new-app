@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import PropTypes from 'prop-types'
 
