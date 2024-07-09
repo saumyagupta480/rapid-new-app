@@ -17,7 +17,8 @@ export default class App extends Component {
         <Navbar/>
 
         <Routes>
-          <Route exact path="/rapid-news-app" element={<News category='latest' />} />
+          <Route exact path="/rapid-news-app" element={<News key="latest" category='latest' />} />
+          <Route path="/business" element={<News key="business" category='business' />} />
         </Routes>
         </Router>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Spinner from "./Spinner";
 import PropTypes from 'prop-types'
+import NewsItem from "./NewsItem";
 
 export class News extends Component {
   static defaultProps = {
@@ -70,18 +71,21 @@ export class News extends Component {
         {!this.state.loading && <div className="row">
           {this.state.articles.map((element) => {
             return (
-              <div className="col-md-4" key={element.url}>
-                {/* <NewsItem
+              <div className="col-md-4" key={element.newsUrl}>
+                {<NewsItem
                   title={element.title}
                   description={
-                    element.description ? element.description.slice(0, 80) : ""
+                    element.snippet ? element.snippet.slice(0, 80) : ""
                   }
-                  imageUrl={element.urlToImage}
-                  newsUrl={element.url}
-                  date={element.publishedAt}
-                  author={element.author}
-                  source = {element.source.name}
-                /> */}
+                  imageUrl={
+                    element.images ? element.images.thumbnail : ""
+                  }
+                  newsUrl={element.newsUrl}
+                  date={element.timestamp}
+                  author={element.publisher}
+                  source = {element.publisher}
+                /> }
+
               </div>
             );
           })}
